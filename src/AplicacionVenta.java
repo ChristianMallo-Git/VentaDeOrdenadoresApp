@@ -12,7 +12,7 @@ public class AplicacionVenta {
     public static void main(String[] args) {
 
         System.out.println("**** App venta de computadoras **** \n");
-        do { // AL MENOS 1 VEZ SE MOSTRARA EL MENU Y LUEGO SOLO SI LA OPCION ELEGIDA ES 1 O 2
+        do {
             mostrarMenu();
             opcionElegida = consola.nextInt();
             System.out.println("elegiste: " + opcionElegida);
@@ -58,25 +58,18 @@ public class AplicacionVenta {
     }
 
     private static void mostrarComputadoras(ArrayList<Computadora> computadoras) {
-
-// De esta manera me muestra las computadoras de la Orden 1 de manera independiente
-//		computadoras.forEach(computadora -> {
-//			System.out.println(computadora.toString());
-//		});
-
-// De esta manera me muestra todas las computadoras de la Orden 1
         computadoras.forEach(System.out::println);
     }
 
     private static void crearOrden() {
         System.out.print("Introduce el número de la Orden = ");
         int idOrden = consola.nextInt();
-        Orden orden = new Orden(idOrden); // Orden creada sin computadoras
+        Orden orden = new Orden(idOrden);
         int decision;
 
         do {
             Computadora nuevaComputadora = crearComputadora();
-            orden.anhadirComputadora(nuevaComputadora); //Aquí se añade la computadora a la "bolsa vacía"
+            orden.anhadirComputadora(nuevaComputadora);
             System.out.println("¿Quieres añadir otra computadora? 1.Si 2.No");
             decision = consola.nextInt();
         } while (decision == 1);
