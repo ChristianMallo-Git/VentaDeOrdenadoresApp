@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class AplicacionVenta {
 
-    static Scanner consola = new Scanner(System.in); // Siempre listo para usar
+    static Scanner consola = new Scanner(System.in);
     static int opcionElegida;
 
     private static List<Orden> ordenes = new ArrayList<>();
